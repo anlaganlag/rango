@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 
     <head>
@@ -11,8 +12,11 @@
             hey there partneer! <br />
             <strong>{{ boldmessage }}</strong><br />
         </div>
+
         <div>
             <a href='/rango/about/'>About </a><br />
+            <img src="{% static 'images/笑容教材.png' %}"
+                 alt='Picture of Rango' />
         </div>
     </body>
 
