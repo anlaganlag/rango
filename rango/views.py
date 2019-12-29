@@ -7,9 +7,13 @@ def index(request):
 
 
 def about(request):
-    return HttpResponse("Rango says here is the about page!<br/> <a href='/rango/about/about1'>About</a>")
+    
+    context_dict = {'slogon':'Be the best about page!',
+                    'gal':'Galfond'}    
+    return render(request,'rango/about.html',context=context_dict)
+
 
 def about1(request):
-    return HttpResponse('Finally you came there,Hero..')
+    return HttpResponse('Finally you came there,Hero..I say no more about....')
 
-# Create your views here.
+
