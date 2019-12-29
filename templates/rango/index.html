@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 {% load static %}
 <html>
+<head>
+    <title> Rango from the index.html</title>
+</head>
 
-    <head>
-        <title> Rango from the index.html</title>
-    </head>
+<body>
+    <h1> Rango says ...</h1>
+    <div> hey there partneer! </div>
 
-    <body>
-        <h1> Rango says ...</h1>
-        <div>
-            hey there partneer! <br />
-            <strong>{{ boldmessage }}</strong><br />
-        </div>
+    <div>
+    {% if categories %}
+    <ul>
+        {% for category in categories %}
+            <li>{{ category.name }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <strong>There are no categories present.</strong>
+    {% endif %}
+    </div>
 
-        <div>
-            <a href='/rango/about/'>About </a><br />
-            <img src="{% static 'images/笑容教材.png' %}"
-                 alt='Picture of Rango' />
+    <div>
+        <a href='/rango/about/'>About Rango</a><br />
+        <img src="{% static 'images/笑容教材.png' %}" alt='Picture of Rango' />
         </div>
     </body>
-
 </html>
